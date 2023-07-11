@@ -1,0 +1,8 @@
+app:
+  name: "graceful-shutdown"
+  profile: "local"
+api:
+  host: ""
+  port: 8080
+  apiTimeout: 10
+  gracefulTimeout: 10
