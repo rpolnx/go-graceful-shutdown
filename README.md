@@ -3,6 +3,18 @@
 This projects shows an example of how to handle a server "GracefulShutdown" without killing currently requests
 
 
+## Run tests
+```sh
+# install mockery if doesn't exists
+GOBIN=$(pwd) go install github.com/vektra/mockery/v2@latest && sudo mv mockery /usr/local/bin/
+mockery --version
+
+go test -v -coverprofile=coverage.out ./...
+
+```sh
+
+
+## Verify graceful
 ```sh
 go run main.go
 

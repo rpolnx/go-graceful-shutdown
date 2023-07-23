@@ -8,7 +8,7 @@ import (
 type Router struct {
 	serverEngine *gin.Engine
 
-	healthController controller.HealthController
+	healthController controller.IHealthController
 }
 
 func (r *Router) newHealthRoute() {
@@ -20,6 +20,6 @@ func (r *Router) AppendRoutes() {
 	r.newHealthRoute()
 }
 
-func NewRouter(serverEngine *gin.Engine, healthController controller.HealthController) *Router {
+func NewRouter(serverEngine *gin.Engine, healthController controller.IHealthController) *Router {
 	return &Router{serverEngine, healthController}
 }

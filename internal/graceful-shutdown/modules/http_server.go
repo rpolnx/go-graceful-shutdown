@@ -11,6 +11,7 @@ import (
 	"rpolnx.com.br/graceful-shutdown/internal/graceful-shutdown/config"
 	"rpolnx.com.br/graceful-shutdown/internal/graceful-shutdown/controller"
 	"rpolnx.com.br/graceful-shutdown/internal/graceful-shutdown/routes"
+	service "rpolnx.com.br/graceful-shutdown/internal/graceful-shutdown/services"
 )
 
 type ExecutionModule interface {
@@ -32,7 +33,9 @@ type httpModule struct {
 func (api *httpModule) Init() (ex ExecutionModule, err error) {
 	serverEngine := gin.Default()
 
-	healthController := controller.NewHealthController()
+	healthService := service.NewHealthService()
+
+	healthController := controller.NewHealthController(healthService)
 
 	routes.NewRouter(serverEngine, healthController).
 		AppendRoutes()
