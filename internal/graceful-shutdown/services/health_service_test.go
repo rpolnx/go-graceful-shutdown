@@ -33,6 +33,6 @@ func (suite *HealthServiceTestSuite) Test_healthService_BlockingRequest() {
 	suite.service.BlockingRequest(time.Duration(10) * time.Millisecond)
 }
 
-func Test_LocationTypeTestSuite(t *testing.T) {
+func Test_HealthServiceTestSuite(t *testing.T) {
 	suite.Run(t, new(HealthServiceTestSuite))
 }

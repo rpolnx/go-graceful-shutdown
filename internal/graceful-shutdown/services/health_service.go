@@ -1,4 +1,4 @@
-//go:generate mockery --name IHealthService --filename=test/testdata/health_service_mock.go --structname=HealthServiceMock
+//go:generate mockery --name IHealthService --inpackage --filename=health_service_mock.go --structname=HealthServiceMock
 package service
 
 import (
